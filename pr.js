@@ -1,5 +1,7 @@
 const urlInput=document.querySelector('#url')
 
+
+
 const gobut=document.querySelector('#gobut')
 
 const cardcont= document.querySelector('.cardcontainer')
@@ -29,7 +31,8 @@ gobut.addEventListener('click',function(event){
     event.preventDefault()
     cardcont.innerHTML="";
     const xhr= new XMLHttpRequest();
-    xhr.open('GET',urlInput.value)
+    const  Urlinput2="https://api.github.com/users/"+urlInput.value
+    xhr.open('GET',Urlinput2)
     xhr.send()
     xhr.onreadystatechange=function(){
         if(xhr.readyState===4){
@@ -43,3 +46,4 @@ gobut.addEventListener('click',function(event){
         }
     }
 })
+console.log(Urlinput2);
